@@ -5,10 +5,10 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css';
 
 
-
+const basename = "/CartAppBasic";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter><CartApp></CartApp></BrowserRouter>
+    <BrowserRouter basename={basename}><CartApp></CartApp></BrowserRouter>
   </React.StrictMode>,
 )
 //Y
