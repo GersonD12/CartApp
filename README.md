@@ -10,6 +10,7 @@
 ## Descripción
 
 Este proyecto es una aplicación básica de listado de productos y carrito de compras creada con **React** y **Vite**. Su propósito es proporcionar un ejemplo práctico para entender y aplicar conceptos clave en el desarrollo con React.
+Pagina SPA (Single Page Application)
 
 ---
 
