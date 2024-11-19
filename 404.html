@@ -1,3 +1,13 @@
+<!-- Este archivo es unicamente para que en github page simpre apunte al index cuando se recargue la pagina.
+Esto  es porque GitHub page es un SPA (Single Page Application), eso hace que accedes directamente a rutas internas 
+(por ejemplo, https://gersond12.github.io/CartAppBasic/catalog), GitHub Pages intenta buscar un archivo en esa ruta 
+específica y no lo encuentra, lo que provoca un error 404
+-->
+<!-- La solocion: 
+La solucion es este archivo que administra las direcciones. 
+Asegúrate de que el archivo 404.html esté configurado correctamente para redirigir todas las rutas a index.html, lo que
+permitirá que React Router maneje las rutas internas. 
+-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -7,7 +17,8 @@
       // Redirigir manteniendo la ruta interna
       var pathname = window.location.pathname.replace("/CartAppBasic", "");
       if (pathname) {
-        window.location.href = "/CartAppBasic";
+        window.location.href = "/CartAppBasic" ;
+        //window.location.href = "/CartAppBasic" + pathname;
       }
     </script>
     <title>Redirigiendo...</title>
