@@ -1,0 +1,41 @@
+En React (y en programación en general), cuando se habla de **estado mutado** o **datos mutados**, se refiere a cambios en los datos (objetos, arrays, etc.) que han sido modificados directamente, en lugar de crear una nueva copia modificada. 
+
+Esto es problemático en React porque la librería depende de la **inmutabilidad** de los estados para detectar cambios y volver a renderizar los componentes cuando sea necesario. Vamos a desglosarlo un poco más:
+
+### Ejemplo de Mutación y Problemas en React
+
+Si tienes un array en el estado de un componente, como este:
+
+```javascript
+const [items, setItems] = useState([1, 2, 3]);
+```
+
+Si "mutas" directamente este array, estarías haciendo algo como:
+
+```javascript
+items.push(4);  // Esto es mutación directa
+setItems(items); // React no detecta cambios correctamente
+```
+
+En este caso, al usar `push`, modificas directamente el array original `items` en lugar de crear uno nuevo. Esto es **mutar el estado**. React podría no detectar el cambio, porque sigue viendo la misma referencia en memoria para `items`. Así, el componente podría no volver a renderizarse, y no verías el cambio en la interfaz.
+
+### Alternativa con Datos Inmutables (sin mutar)
+
+Para evitar la mutación, en lugar de modificar el array original, creas una **nueva copia** con los cambios que quieres hacer:
+
+```javascript
+const newItems = [...items, 4]; // Creamos un nuevo array
+setItems(newItems); // Actualizamos el estado con una nueva referencia
+```
+
+Aquí, `newItems` es un array nuevo, y React detecta que la referencia ha cambiado, por lo que re-renderiza el componente.
+
+### ¿Por Qué React Necesita Inmutabilidad?
+
+React usa la **comparación de referencias** para determinar si necesita actualizar un componente. Si mutas directamente los datos, React podría no detectar cambios, lo cual afecta el rendimiento y el flujo de actualización de la interfaz. Al trabajar con datos inmutables, React puede detectar cambios fácilmente y actualizar solo los componentes necesarios.
+
+### Resumen
+- **Datos mutados**: se modifican directamente, lo cual puede generar problemas en la detección de cambios en React.
+- **Datos inmutables**: se crea una copia nueva con los cambios, lo que permite a React detectar cambios y actualizar la interfaz correctamente.
+
+Es una buena práctica en React evitar la mutación directa del estado y trabajar siempre con copias inmutables para asegurar el correcto funcionamiento de la aplicación.
