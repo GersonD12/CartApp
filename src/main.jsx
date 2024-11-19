@@ -8,7 +8,9 @@ import './App.css';
 const basename = "/CartAppBasic";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}><CartApp></CartApp></BrowserRouter>
+    <BrowserRouter basename={basename}>
+    <CartApp></CartApp>
+    </BrowserRouter>
   </React.StrictMode>,
 )
 //Y

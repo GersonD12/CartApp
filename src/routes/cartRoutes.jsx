@@ -1,10 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { CatalogView } from "../components/CatalogView"
 import { CardView } from "../components/cardView"
+import { NotFound } from "../components/NotFund"
 
 export const CartRoutes = ({handlerAddProductCard,cardItems,handlerDeleteProductCard}) => {
     return(
         <Routes>
+                    <Route path="*" element={<NotFound></NotFound>}/>
                     <Route path="catalog" element={
                         //Colocar los productos que el usuario puede elegir, se envia una funcion para que el usurio agregue items 
                         <CatalogView handler={handlerAddProductCard}></CatalogView>
@@ -24,6 +26,7 @@ export const CartRoutes = ({handlerAddProductCard,cardItems,handlerDeleteProduct
                     }>
                     </Route>
                     <Route path="/" element={<Navigate to={'/catalog'}></Navigate>}></Route>
+                    
                 </Routes>
     )
 }
