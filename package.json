@@ -1,7 +1,7 @@
 {
+  "homepage": "https://gersond12.github.io/CartAppBasic/",
   "name": "cart-ap",
   "private": true,
-  "homepage": "https://gersond12.github.io/CartAppBasic/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
