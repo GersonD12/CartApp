@@ -83,3 +83,5 @@ CartAppBasic/
 
 - Este proyecto está pensado como material educativo. Cada parte del código contiene **comentarios explicativos** para facilitar su comprensión.
 - Puedes modificar el proyecto para adaptarlo a tus necesidades o utilizarlo como punto de partida para crear aplicaciones más complejas.
+
+node v23.0.0
